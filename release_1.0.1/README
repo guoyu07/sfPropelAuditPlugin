@@ -1,0 +1,62 @@
+= sfPropelAuditPlugin plugin =
+
+The `sfPropelAuditPlugin` is a symfony plugin that provides audit functionality to Propel objects.
+
+== Installation ==
+
+  * Install the plugin from the plugin repository
+
+    {{{
+      symfony plugin-install http://plugins.symfony-project.com/sfPropelAuditPlugin
+    }}}
+
+  * or install the plugin from a local file
+
+    {{{
+      symfony plugin-install sfPropelAuditPlugin-x.y.z.tgz
+    }}}
+
+    where x.y.z is the version number
+
+
+  * Enable Propel behavior support in `propel.ini`:
+
+    {{{
+      propel.builder.AddBehaviors = true
+    }}}
+
+  * Rebuild your model:
+
+    {{{
+      symfony propel-build-all
+    }}}
+
+  * Clear your cache:
+
+    {{{
+      symfony cc
+    }}}
+
+  * Enable the behavior for one of your Propel model:
+
+    {{{
+      // lib/model/Article.php
+      class Article
+      {
+      }
+
+      sfPropelBehavior::add('Article', array('audit'));
+    }}}
+
+  * You're done
+
+
+== Uninstallation ==
+
+  * Uninstall the plugin
+
+    {{{
+      symfony plugin-uninstall symfony/sfPropelAuditPlugin
+    }}}
+
+  * Remove the sfPropelAudit behavior for one or more of your Propel models
