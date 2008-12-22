@@ -1,6 +1,8 @@
 = sfPropelAuditPlugin plugin =
 
 The `sfPropelAuditPlugin` is a symfony plugin that provides audit functionality to Propel objects.
+This means that you can keep an audit trail of anything that is happening in your database. For example if you
+want to maintain records of users changing or deleting data in your web application.
 
 == Installation ==
 
